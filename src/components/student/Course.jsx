@@ -5,6 +5,8 @@ import { Badge } from "../ui/badge";
 import { Link } from "react-router-dom";
 
 export default function Course({course}) {
+
+  
   return (
 
     <Link to = {`course-detail/${course._id}`}>

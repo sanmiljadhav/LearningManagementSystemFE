@@ -22,6 +22,8 @@ import { toast } from "sonner";
 
 export default function Profile() {
   const { data, isLoading: isProfileDataLoading, refetch } = useLoadUserQuery();
+
+  console.log("data is", data)
   const [
     updateUser,
     {
@@ -84,7 +86,7 @@ export default function Profile() {
   const { user } = data;
 
   return (
-    <div className="max-w-4xl mx-auto my-24 px-4 md:px-0 border-2">
+    <div className="max-w-4xl mx-auto my-24 px-4 md:px-0 ">
       <h1 className="font-bold text-2xl text-center md:text-left">PROFILE</h1>
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 my-5">
         <div className="flex flex-col items-center">
@@ -203,7 +205,7 @@ export default function Profile() {
             <h1>You haven't enrolled yet</h1>
           ) : (
             user?.enrolledCourses?.map((course) => {
-              return <Course key={course._id} />;
+              return <Course key={course._id} course={course} />;
             })
           )}
         </div>

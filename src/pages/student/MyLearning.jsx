@@ -1,11 +1,18 @@
 import Course from "@/components/student/Course";
+import { useLoadUserQuery } from "@/features/api/authApi";
 import React from "react";
 
 // Jo courses User ne purchase kiye hai wo "My Learning" me aayenge
 
 export default function MyLearning() {
+
+  
   const isLoading = false;
-  const myLearningCourses = [1, 2,3,4,5,6];
+  const { data, isLoading: isProfileDataLoading, refetch } = useLoadUserQuery();
+  const myLearningCourses = data?.user.enrolledCourses || []
+
+  
+  
 
   return (
     <div className="max-w-4xl mx-auto my-24 px-4 md:px-0">

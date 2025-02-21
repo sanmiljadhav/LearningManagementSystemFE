@@ -17,6 +17,10 @@ import EditCourse from "./pages/admin/course/EditCourse";
 import CreateLecture from "./pages/admin/lecture/CreateLecture";
 import Editlecture from "./pages/admin/lecture/Editlecture";
 import CourseDetail from "./pages/student/CourseDetail";
+import CourseProgress from "./pages/student/CourseProgress";
+import SearchPage from "./pages/student/SearchPage";
+import { AdminRoute, AuthenticatedUser, ProtectedRoute } from "./components/ProtectedRoute";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,7 +44,8 @@ function App() {
           path: "login",
           element: (
             <>
-              <Login />
+            <AuthenticatedUser><Login /></AuthenticatedUser>
+              
             </>
           ),
         },
@@ -49,7 +54,8 @@ function App() {
           path: "my-learning",
           element: (
             <>
-              <MyLearning />
+            <ProtectedRoute><MyLearning /></ProtectedRoute>
+              
             </>
           ),
         },
@@ -58,21 +64,31 @@ function App() {
           path: "profile",
           element: (
             <>
-              <Profile/>
+            <ProtectedRoute><Profile/></ProtectedRoute>
+              
             </>
           ),
         },
 
         {
           path:"course-detail/:courseId",
-          element:<CourseDetail/>
+          element:<ProtectedRoute><CourseDetail/></ProtectedRoute>
+        },
+
+        {
+          path:"course-progress/:courseId",
+          element:<ProtectedRoute><CourseProgress/></ProtectedRoute>
+        },
+        {
+          path:"course/search",
+          element:<ProtectedRoute><SearchPage/></ProtectedRoute>
         },
 
         // Admin Routes starts here
 
         {
           path:"admin",
-          element:<Sidebar/>,
+          element:<AdminRoute><Sidebar/></AdminRoute>,
           children:[{
             path:"dashboard",
             element:<Dashboard/>
@@ -112,7 +128,8 @@ function App() {
 
   return (
     <main>
-      <RouterProvider router = {appRouter}/>
+      <ThemeProvider><RouterProvider router = {appRouter}/></ThemeProvider>
+      
      
     </main>
   );

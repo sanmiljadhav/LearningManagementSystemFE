@@ -89,7 +89,7 @@ export default function Navbar() {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
 
-                {user.role == "instructor" && <DropdownMenuItem><Link to="admin">Dashboard</Link></DropdownMenuItem>}
+                {user.role == "instructor" && <DropdownMenuItem><Link to="/admin/dashboard">Dashboard</Link></DropdownMenuItem>}
 
                 
 
