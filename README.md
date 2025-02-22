@@ -1,4 +1,7 @@
 # LMS Project (Learning Management System)
+
+https://github.com/sanmiljadhav/LearningManagementSystemFE/blob/master/src/assets/Lms%20system%20(2)%20(1).mp4
+
 ## Overview
 This project is a Learning Management System (LMS) that provides a platform for students to buy and access courses, while allowing instructors to create and manage their courses and lectures. The platform also includes features for user authentication, course search and filtering, and course sales tracking for administrators.
 
