@@ -11,13 +11,14 @@ See course details (e.g., course name, description, created by information, enro
 Buy courses through Razorpay integration and make payments using card details.
 Access course lectures after purchase.
 Search for courses and filter by category and price.
-INSTRUCTOR
+
+## INSTRUCTOR/ADMIN
 
 Create new courses.
 Edit course details (title, subtitle, description, category, course level, price, and course thumbnail).
 Create and manage lectures for their courses.
 Upload lecture videos and files using Cloudinary.
-## ADMIN
+
 
 Manage all courses and lectures on the platform.
 View total sales and revenue.
