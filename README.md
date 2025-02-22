@@ -4,7 +4,7 @@ This project is a Learning Management System (LMS) that provides a platform for 
 
 ## Features
 ## Roles
-STUDENT
+## STUDENT
 
 View and browse all published courses.
 See course details (e.g., course name, description, created by information, enrolled students, course content).
